@@ -1,0 +1,26 @@
+BODY {
+	background-color: DimGray;
+	font-family: "Trebuchet MS", Helvetica, sans-serif;
+}
+BUTTON {
+	width: 75px;
+	background-color: rgba(50, 50, 50, 1);
+	border: None;
+	font-family: "Trebuchet MS", Helvetica, sans-serif;
+	padding: 3px;
+	transition-duration: 0.5s;
+	color: white;
+}
+BUTTON:hover {
+	background-color: rgba(100, 100, 100, 1);
+	color: black;
+}
+#BuildButton.BUTTON{
+	width: 150px;
+}
+.TABLINKS {
+	width: 125px;
+}
+INPUT {
+	width: 50px;
+}
