@@ -43,8 +43,6 @@ var BSmelters = 0;
 var Smiths = 0;
 var AlloyFurnaces = 0;
 var BForges = 0;
-var Land = 1000;
-var EmptyLand = 1000;
 var Looper = setInterval(Loop, 20);
 var AutoSaver = setInterval(Save, 30000);}
 function Initialize(){
@@ -119,8 +117,6 @@ function UpdateDisp(){
 	document.getElementById("AlloyFurnaces").innerHTML = Math.floor(AlloyFurnaces);
 	document.getElementById("BForges").innerHTML = Math.floor(BForges);
 	document.getElementById("Tool5").innerHTML = Math.floor(Tool5);
-	document.getElementById("Land").innerHTML = Math.floor(Land);
-	document.getElementById("EmptyLand").innerHTML = Math.floor(EmptyLand);
 }
 function Gather(){
 	Food = Food + Gatherers/40 + Hunters/40 + 1.5*Farmers/50 + 1.5*Trappers/50;
@@ -136,7 +132,7 @@ function Gather(){
 		Tool1 = Tool1 + Craftsmen/250;
 		Thatch = Thatch - Craftsmen/50;
 	};
-	if(Thatch >= Laborers/50 && Hide >= Laborers/50 && EmptyLand >= Shelter){
+	if(Thatch >= Laborers/50 && Hide >= Laborers/50){
 		Shelter = Shelter + Laborers/250;
 		Thatch = Thatch - Laborers/50;
 		Hide = Hide - Laborers/50;
@@ -159,7 +155,7 @@ function Gather(){
 		Stones = Stones + 0.25*Masons/50
 		Rock = Rock - Masons/50;
 	};
-	if(Lumber >= Builders/50 && Stones >= Builders/200 && EmptyLand >= Shelter){
+	if(Lumber >= Builders/50 && Stones >= Builders/200){
 		Shelter = Shelter + Builders/100;
 		Lumber = Lumber - Builders/50;
 		Stones = Stones - Builders/200;
