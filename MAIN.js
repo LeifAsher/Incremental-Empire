@@ -174,11 +174,11 @@ function Gather(){
 	};
 	if(CopperOre >= 9*BSmelters/50 && Tin >= BSmelters/50){
 		Bronze = Bronze + BSmelters/50;
-		CopperOre = CopperOre - 9*BSmelters/50;
+		CopperOre = CopperOre - BSmelters/25;
 		Tin = Tin - BSmelters/50;
 	};
 	if(Bronze >= Smiths/50 && Leather >= Smiths/50 && Lumber >= Smiths/50){
-		Tool5 = Tool5 + Smiths/50;
+		Tool5 = Tool5 + Smiths/250;
 		Bronze = Bronze - Smiths/50;
 		Leather = Leather - Smiths/50;
 		Lumber = Lumber - Smiths/50;
@@ -232,6 +232,7 @@ function AchievementCheck(){
 	}
 	if(Forges > 0){
 		DISPWRIGHT.style.display = "block";
+		DISPWRIGHT2.style.display = "block";
 	}
 	if(Leather > 0){
 		DISPLEATHER.style.display = "inline-block";
@@ -246,6 +247,7 @@ function AchievementCheck(){
 	}
 	if(BForges > 0){
 		DISPSMITH.style.display = "block";
+		DISPSMITH2.style.display = "block";
 	}
 	if(AlloyFurnaces > 0){
 		DISPBSMELTER.style.display = "block";

@@ -1,25 +1,31 @@
 BODY {
-	background-color: DimGray;
+	background-color: White;
 	font-family: "Trebuchet MS", Helvetica, sans-serif;
+	Color: Black;
 }
 BUTTON {
 	width: 75px;
-	background-color: rgba(50, 50, 50, 1);
-	border: None;
+	background-color: white;
+	border-style: solid;
+	border-width: 2px;
+	border-color: black;
 	font-family: "Trebuchet MS", Helvetica, sans-serif;
 	padding: 3px;
-	transition-duration: 0.5s;
-	color: white;
+	transition-duration: 0.2s;
+	color: Black;
+	font-size: 15px;
 }
 BUTTON:hover {
-	background-color: rgba(100, 100, 100, 1);
+	background-color: rgba(200, 200, 200, 1);
 	color: black;
 }
 #BuildButton.BUTTON{
 	width: 150px;
 }
 .TABLINKS {
-	width: 125px;
+	width: 150px;
+	font-weight: bold;
+	font-size: 18px;
 }
 INPUT {
 	width: 50px;
