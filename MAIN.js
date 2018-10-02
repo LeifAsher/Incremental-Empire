@@ -71,7 +71,6 @@ function Populate(){
 }
 function UpdateDisp(){
 	EmptyShelter = Math.max(Math.floor(Shelter) - Math.floor(Population), 0);
-	EmptyLand = Math.max(Math.floor(Land) - Math.floor(Shelter), 0);
 	document.getElementById("Unemployed").innerHTML = Unemployed;
 	document.getElementById("EmptyShelter").innerHTML = EmptyShelter;
 	document.getElementById("Population").innerHTML = Math.floor(Population);
