@@ -65,8 +65,8 @@ function Tab(evt, tab){
 function Populate(){
 	var NewFood = Food - Population/50;
 	Food = Math.max(NewFood, 0);
-	if(NewFood >= 0 && EmptyShelter >= 1){
-		Population = Population*1.0005;
+	if(NewFood >= 0 && EmptyShelter >= Population*0.0002){
+		Population += Population*0.0002
 	}
 }
 function UpdateDisp(){
@@ -545,9 +545,9 @@ function WipeSave(){
 	localStorage.removeItem("save");
 };
 function Loop(){
+	Gather();
 	Populate();
 	Unemployment();
-	Gather();
 	AchievementCheck();
 	UpdateDisp();
 }

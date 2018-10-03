@@ -1,23 +1,23 @@
 BODY {
-	background-color: White;
+	background-color: Black;
 	font-family: "Trebuchet MS", Helvetica, sans-serif;
-	Color: Black;
+	Color: White;
 }
 BUTTON {
 	width: 75px;
-	background-color: white;
+	background-color: Black;
 	border-style: solid;
 	border-width: 2px;
-	border-color: black;
+	border-color: White;
 	font-family: "Trebuchet MS", Helvetica, sans-serif;
 	padding: 3px;
 	transition-duration: 0.2s;
-	color: Black;
+	color: White;
 	font-size: 15px;
 }
 BUTTON:hover {
 	background-color: rgba(200, 200, 200, 1);
-	color: black;
+	color: White;
 }
 #BuildButton.BUTTON{
 	width: 150px;
