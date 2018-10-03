@@ -17,18 +17,18 @@
 		&nbsp;
 		Total Shelter: <SPAN ID="Shelter">0</SPAN>
 		&nbsp;
-		<DIV ID="DISPLUMBER" STYLE="display: none">Lumber: <SPAN ID="Lumber">0</SPAN></DIV>
+		<DIV ID="DISPLUMBER" CLASS="HIDDEN">Lumber: <SPAN ID="Lumber">0</SPAN></DIV>
 		&nbsp;
-		<DIV ID="DISPSTONES" STYLE="display: none">Stone: <SPAN ID="Stones">0</SPAN></DIV>
+		<DIV ID="DISPSTONES" CLASS="HIDDEN">Stone: <SPAN ID="Stones">0</SPAN></DIV>
 	</H3>
 	<DIV CLASS="TAB">
-		<BUTTON CLASS="TABLINKS" ID="ARCHB"ONCLICK="Tab(event, 'Archaic')" STYLE="display: none"> Archaic Age </BUTTON>
-		<BUTTON CLASS="TABLINKS" ID="AGRIB" ONCLICK="Tab(event, 'Agricultural')" STYLE="display: none"> Agricultural Age </BUTTON>
-		<BUTTON CLASS="TABLINKS" ID="STONEB" ONCLICK="Tab(event, 'StoneAge')" STYLE="display: none"> Stone Age </BUTTON>
-		<BUTTON CLASS="TABLINKS" ID="COPPERB" ONCLICK="Tab(event, 'CopperAge')" STYLE="display: none"> Copper Age </BUTTON>
-		<DIV ID="BUTTONROW2" STYLE="display:none">
+		<BUTTON CLASS="TABLINKS" ID="ARCHB" ONCLICK="Tab(event, 'Archaic')"> Archaic Age </BUTTON>
+		<BUTTON CLASS="TABLINKS" ID="AGRIB" ONCLICK="Tab(event, 'Agricultural')"> Agricultural Age </BUTTON>
+		<BUTTON CLASS="TABLINKS" ID="STONEB" ONCLICK="Tab(event, 'StoneAge')"> Stone Age </BUTTON>
+		<BUTTON CLASS="TABLINKS" ID="COPPERB" ONCLICK="Tab(event, 'CopperAge')"> Copper Age </BUTTON>
+		<DIV ID="BUTTONROW2" CLASS="HIDDEN">
 			<BR />
-			<BUTTON CLASS="TABLINKS" ID="BRONZEB" ONCLICK="Tab(event, 'BronzeAge')" STYLE="display: none"> Bronze Age </BUTTON>
+			<BUTTON CLASS="TABLINKS" ID="BRONZEB" ONCLICK="Tab(event, 'BronzeAge')"> Bronze Age </BUTTON>
 		</DIV>
 	</DIV>
 	<DIV ID="Archaic" CLASS="TABCONTENT">
@@ -44,41 +44,41 @@
 		<DIV>
 			Gatherers: <SPAN ID="Gatherers">0</SPAN>
 			<BR />
-			<BUTTON CLASS="BUTTON" ONCLICK="Add('Gatherer', -1)">Remove</BUTTON>
+			<BUTTON CLASS="ADDBUTTON" ONCLICK="Add('Gatherer', -1)">Remove</BUTTON>
 			<INPUT ID="NGATHER" TYPE="NUMBER" MIN="1" VALUE="1" STEP="1">
-			<BUTTON CLASS="BUTTON" ONCLICK="Add('Gatherer', 1)">Add</BUTTON>
+			<BUTTON CLASS="ADDBUTTON" ONCLICK="Add('Gatherer', 1)">Add</BUTTON>
 		</DIV>
 		<BR />
 		<DIV>
 			Craftsmen: <SPAN ID="Craftsmen">0</SPAN>
 			<BR />
-			<BUTTON CLASS="BUTTON" ONCLICK="Add('Craftsman', -1)">Remove</BUTTON>
+			<BUTTON CLASS="ADDBUTTON" ONCLICK="Add('Craftsman', -1)">Remove</BUTTON>
 			<INPUT ID="NCRAFT" TYPE="NUMBER" MIN="1" VALUE="1" STEP="1">
-			<BUTTON CLASS="BUTTON" ONCLICK="Add('Craftsman', 1)">Add</BUTTON>
+			<BUTTON CLASS="ADDBUTTON" ONCLICK="Add('Craftsman', 1)">Add</BUTTON>
 		</DIV>
 		<BR />
-		<DIV ID="DISPHUNTER" STYLE="display: none">
+		<DIV ID="DISPHUNTER" CLASS="HIDDEN">
 			Hunters: <SPAN ID="Hunters">0</SPAN>
 			<BR />
-			<BUTTON CLASS="BUTTON" ONCLICK="Add('Hunter', -1)">Remove</BUTTON>
+			<BUTTON CLASS="ADDBUTTON" ONCLICK="Add('Hunter', -1)">Remove</BUTTON>
 			<INPUT ID="NHUNT" TYPE="NUMBER" MIN="1" VALUE="1" STEP="1">
-			<BUTTON CLASS="BUTTON" ONCLICK="Add('Hunter', 1)">Add</BUTTON>
+			<BUTTON CLASS="ADDBUTTON" ONCLICK="Add('Hunter', 1)">Add</BUTTON>
 		</DIV>
 		<BR />
-		<DIV ID="DISPLABOR" STYLE="display: none">
+		<DIV ID="DISPLABOR" CLASS="HIDDEN">
 			Laborers: <SPAN ID="Laborers">0</SPAN>
 			<BR />
-			<BUTTON CLASS="BUTTON" ONCLICK="Add('Laborer', -1)">Remove</BUTTON>
+			<BUTTON CLASS="ADDBUTTON" ONCLICK="Add('Laborer', -1)">Remove</BUTTON>
 			<INPUT ID="NLABOR" TYPE="NUMBER" MIN="1" VALUE="1" STEP="1">
-			<BUTTON CLASS="BUTTON" ONCLICK="Add('Laborer', 1)">Add</BUTTON>
+			<BUTTON CLASS="ADDBUTTON" ONCLICK="Add('Laborer', 1)">Add</BUTTON>
 		</DIV>
 		<BR />
-		<DIV ID="DISPARTISAN" STYLE="display: none">
+		<DIV ID="DISPARTISAN" CLASS="HIDDEN">
 			Artisans: <SPAN ID="Artisans">0</SPAN>
 			<BR />
-			<BUTTON CLASS="BUTTON" ONCLICK="Add('Artisan', -1)">Remove</BUTTON>
+			<BUTTON CLASS="ADDBUTTON" ONCLICK="Add('Artisan', -1)">Remove</BUTTON>
 			<INPUT ID="NART" TYPE="NUMBER" MIN="1" VALUE="1" STEP="1">
-			<BUTTON CLASS="BUTTON" ONCLICK="Add('Artisan', 1)">Add</BUTTON>
+			<BUTTON CLASS="ADDBUTTON" ONCLICK="Add('Artisan', 1)">Add</BUTTON>
 		</DIV>
 	</DIV>
 	<DIV ID="Agricultural" CLASS="TABCONTENT">
@@ -94,33 +94,33 @@
 		<DIV>
 			Farmers: <SPAN ID="Farmers">0</SPAN>
 			<BR />
-			<BUTTON CLASS="BUTTON" ONCLICK="Add('Farmer', -1)">Remove</BUTTON>
+			<BUTTON CLASS="ADDBUTTON" ONCLICK="Add('Farmer', -1)">Remove</BUTTON>
 			<INPUT ID="NFARM" TYPE="NUMBER" MIN="1" VALUE="1" STEP="1">
-			<BUTTON CLASS="BUTTON" ONCLICK="Add('Farmer', 1)">Add</BUTTON>
+			<BUTTON CLASS="ADDBUTTON" ONCLICK="Add('Farmer', 1)">Add</BUTTON>
 		</DIV>
 		<BR />
 		<DIV>
 			Woodcutters: <SPAN ID="Cutters">0</SPAN>
 			<BR />
-			<BUTTON CLASS="BUTTON" ONCLICK="Add('Cutter', -1)">Remove</BUTTON>
+			<BUTTON CLASS="ADDBUTTON" ONCLICK="Add('Cutter', -1)">Remove</BUTTON>
 			<INPUT ID="NCUT" TYPE="NUMBER" MIN="1" VALUE="1" STEP="1">
-			<BUTTON CLASS="BUTTON" ONCLICK="Add('Cutter', 1)">Add</BUTTON>
+			<BUTTON CLASS="ADDBUTTON" ONCLICK="Add('Cutter', 1)">Add</BUTTON>
 		</DIV>
 		<BR />
 		<DIV>
 			Diggers: <SPAN ID="Diggers">0</SPAN>
 			<BR />
-			<BUTTON CLASS="BUTTON" ONCLICK="Add('Digger', -1)">Remove</BUTTON>
+			<BUTTON CLASS="ADDBUTTON" ONCLICK="Add('Digger', -1)">Remove</BUTTON>
 			<INPUT ID="NDIG" TYPE="NUMBER" MIN="1" VALUE="1" STEP="1">
-			<BUTTON CLASS="BUTTON" ONCLICK="Add('Digger', 1)">Add</BUTTON>
+			<BUTTON CLASS="ADDBUTTON" ONCLICK="Add('Digger', 1)">Add</BUTTON>
 		</DIV>
 		<BR />
-		<DIV ID="DISPARTIFICER" STYLE="display: none">
+		<DIV ID="DISPARTIFICER" CLASS="HIDDEN">
 			Artificers: <SPAN ID="Artificers">0</SPAN>
 			<BR />
-			<BUTTON CLASS="BUTTON" ONCLICK="Add('Artificer', -1)">Remove</BUTTON>
+			<BUTTON CLASS="ADDBUTTON" ONCLICK="Add('Artificer', -1)">Remove</BUTTON>
 			<INPUT ID="NARTIFICE" TYPE="NUMBER" MIN="1" VALUE="1" STEP="1">
-			<BUTTON CLASS="BUTTON" ONCLICK="Add('Artificer', 1)">Add</BUTTON>
+			<BUTTON CLASS="ADDBUTTON" ONCLICK="Add('Artificer', 1)">Add</BUTTON>
 		</DIV>
 	</DIV>
 	<DIV ID="StoneAge" CLASS="TABCONTENT">
@@ -136,59 +136,59 @@
 		<DIV>
 			Carpenters: <SPAN ID="Carpenters">0</SPAN>
 			<BR />
-			<BUTTON CLASS="BUTTON" ONCLICK="Add('Carpenter', -1)">Remove</BUTTON>
+			<BUTTON CLASS="ADDBUTTON" ONCLICK="Add('Carpenter', -1)">Remove</BUTTON>
 			<INPUT ID="NCARP" TYPE="NUMBER" MIN="1" VALUE="1" STEP="1">
-			<BUTTON CLASS="BUTTON" ONCLICK="Add('Carpenter', 1)">Add</BUTTON>
+			<BUTTON CLASS="ADDBUTTON" ONCLICK="Add('Carpenter', 1)">Add</BUTTON>
 		</DIV>
 		<BR />
 		<DIV>
 			Masons: <SPAN ID="Masons">0</SPAN>
 			<BR />
-			<BUTTON CLASS="BUTTON" ONCLICK="Add('Mason', -1)">Remove</BUTTON>
+			<BUTTON CLASS="ADDBUTTON" ONCLICK="Add('Mason', -1)">Remove</BUTTON>
 			<INPUT ID="NMASON" TYPE="NUMBER" MIN="1" VALUE="1" STEP="1">
-			<BUTTON CLASS="BUTTON" ONCLICK="Add('Mason', 1)">Add</BUTTON>
+			<BUTTON CLASS="ADDBUTTON" ONCLICK="Add('Mason', 1)">Add</BUTTON>
 		</DIV>
 		<BR />
-		<DIV ID="DISPBUILDER" STYLE="display: none">
+		<DIV ID="DISPBUILDER" CLASS="HIDDEN">
 			Builders: <SPAN ID="Builders">0</SPAN>
 			<BR />
-			<BUTTON CLASS="BUTTON" ONCLICK="Add('Builder', -1)">Remove</BUTTON>
+			<BUTTON CLASS="ADDBUTTON" ONCLICK="Add('Builder', -1)">Remove</BUTTON>
 			<INPUT ID="NBUILD" TYPE="NUMBER" MIN="1" VALUE="1" STEP="1">
-			<BUTTON CLASS="BUTTON" ONCLICK="Add('Builder', 1)">Add</BUTTON>
+			<BUTTON CLASS="ADDBUTTON" ONCLICK="Add('Builder', 1)">Add</BUTTON>
 		</DIV>
 		<BR />
-		<DIV ID="DISPSMELTER" STYLE="display: none">
+		<DIV ID="DISPSMELTER" CLASS="HIDDEN">
 			Smelters: <SPAN ID="Smelters">0</SPAN>
 			&nbsp;
 			Furnaces: <SPAN ID="Furnaces">0</SPAN>
 		</DIV>
 		<BR />
-		<DIV ID="FURNACEBUTTON" STYLE="display: none">
-			<BUTTON CLASS="BUTTON" ID="BuildButton" ONCLICK="Add('Furnace', 1)">Build Furnace</BUTTON>
+		<DIV ID="FURNACEBUTTON" CLASS="HIDDEN">
+			<BUTTON CLASS="BUILDBUTTON" ONCLICK="Add('Furnace', 1)">Build Furnace</BUTTON>
 			<INPUT ID="NFURN" TYPE="NUMBER" MIN="1" VALUE="1" STEP="1">
 		</DIV>
 		<BR />
-		<DIV ID="DISPSMELTER2" STYLE="display: none">
-			<BUTTON CLASS="BUTTON" ONCLICK="Add('Smelter', -1)">Remove</BUTTON>
+		<DIV ID="DISPSMELTER2" CLASS="HIDDEN">
+			<BUTTON CLASS="ADDBUTTON" ONCLICK="Add('Smelter', -1)">Remove</BUTTON>
 			<INPUT ID="NSMELT" TYPE="NUMBER" MIN="1" VALUE="1" STEP="1">
-			<BUTTON CLASS="BUTTON" ONCLICK="Add('Smelter', 1)">Add</BUTTON>
+			<BUTTON CLASS="ADDBUTTON" ONCLICK="Add('Smelter', 1)">Add</BUTTON>
 		</DIV>
 		<BR />
-		<DIV ID="DISPWRIGHT" STYLE="display: none">
+		<DIV ID="DISPWRIGHT" CLASS="HIDDEN">
 			Wrights: <SPAN ID="Wrights">0</SPAN>
 			&nbsp;
 			Forges: <SPAN ID="Forges">0</SPAN>
 		</DIV>
 		<BR />
-		<DIV ID="FORGEBUTTON" STYLE="display: none">
-			<BUTTON ID="BuildButton" CLASS="BUTTON" ONCLICK="Add('Forge', 1)">Build Forge</BUTTON>
+		<DIV ID="FORGEBUTTON" CLASS="HIDDEN">
+			<BUTTON CLASS="BUILDBUTTON" ONCLICK="Add('Forge', 1)">Build Forge</BUTTON>
 			<INPUT ID="NFORGE" TYPE="NUMBER" MIN="1" VALUE="1" STEP="1">
 		</DIV>
 		<BR />
-		<DIV ID="DISPWRIGHT2" STYLE="display: none">
-			<BUTTON CLASS="BUTTON" ONCLICK="Add('Wright', -1)">Remove</BUTTON>
+		<DIV ID="DISPWRIGHT2" CLASS="HIDDEN">
+			<BUTTON CLASS="ADDBUTTON" ONCLICK="Add('Wright', -1)">Remove</BUTTON>
 			<INPUT ID="NWRIGHT" TYPE="NUMBER" MIN="1" VALUE="1" STEP="1">
-			<BUTTON CLASS="BUTTON" ONCLICK="Add('Wright', 1)">Add</BUTTON>
+			<BUTTON CLASS="ADDBUTTON" ONCLICK="Add('Wright', 1)">Add</BUTTON>
 		</DIV>
 	</DIV>
 	<DIV ID="CopperAge" CLASS="TABCONTENT">
@@ -200,75 +200,75 @@
 				Leather: <SPAN ID="Leather">0</SPAN>
 			</DIV>
 			&nbsp;
-			<DIV ID="DISPTIN" STYLE="display: none">Tin Ore: <SPAN ID="Tin">0</SPAN></DIV>
+			<DIV ID="DISPTIN" CLASS="HIDDEN">Tin Ore: <SPAN ID="Tin">0</SPAN></DIV>
 			&nbsp;
-			<DIV ID="DISPBRONZE" STYLE="display: none">Bronze: <SPAN ID="Bronze">0</SPAN></DIV>
+			<DIV ID="DISPBRONZE" CLASS="HIDDEN">Bronze: <SPAN ID="Bronze">0</SPAN></DIV>
 		</DIV>
 		<BR />
 		<DIV>
 			Trappers: <SPAN ID="Trappers">0</SPAN>
 			<BR />
-			<BUTTON CLASS="BUTTON" ONCLICK="Add('Trapper', -1)">Remove</BUTTON>
+			<BUTTON CLASS="ADDBUTTON" ONCLICK="Add('Trapper', -1)">Remove</BUTTON>
 			<INPUT ID="NTRAP" TYPE="NUMBER" MIN="1" VALUE="1" STEP="1">
-			<BUTTON CLASS="BUTTON" ONCLICK="Add('Trapper', 1)">Add</BUTTON>
+			<BUTTON CLASS="ADDBUTTON" ONCLICK="Add('Trapper', 1)">Add</BUTTON>
 		</DIV>
 		<BR />
 		<DIV>
 			Tanners: <SPAN ID="Tanners">0</SPAN>
 			<BR />
-			<BUTTON CLASS="BUTTON" ONCLICK="Add('Tanner', -1)">Remove</BUTTON>
+			<BUTTON CLASS="ADDBUTTON" ONCLICK="Add('Tanner', -1)">Remove</BUTTON>
 			<INPUT ID="NTAN" TYPE="NUMBER" MIN="1" VALUE="1" STEP="1">
-			<BUTTON CLASS="BUTTON" ONCLICK="Add('Tanner', 1)">Add</BUTTON>
+			<BUTTON CLASS="ADDBUTTON" ONCLICK="Add('Tanner', 1)">Add</BUTTON>
 		</DIV>
 		<BR />
 		<DIV>
 			Lumberjacks: <SPAN ID="Lumberjacks">0</SPAN>
 			<BR />
-			<BUTTON CLASS="BUTTON" ONCLICK="Add('Lumberjack', -1)">Remove</BUTTON>
+			<BUTTON CLASS="ADDBUTTON" ONCLICK="Add('Lumberjack', -1)">Remove</BUTTON>
 			<INPUT ID="NLUMBERJ" TYPE="NUMBER" MIN="1" VALUE="1" STEP="1">
-			<BUTTON CLASS="BUTTON" ONCLICK="Add('Lumberjack', 1)">Add</BUTTON>
+			<BUTTON CLASS="ADDBUTTON" ONCLICK="Add('Lumberjack', 1)">Add</BUTTON>
 		</DIV>
 		<BR />
 		<DIV>
 			Miners: <SPAN ID="Miners">0</SPAN>
 			<BR />
-			<BUTTON CLASS="BUTTON" ONCLICK="Add('Miner', -1)">Remove</BUTTON>
+			<BUTTON CLASS="ADDBUTTON" ONCLICK="Add('Miner', -1)">Remove</BUTTON>
 			<INPUT ID="NMINE" TYPE="NUMBER" MIN="1" VALUE="1" STEP="1">
-			<BUTTON CLASS="BUTTON" ONCLICK="Add('Miner', 1)">Add</BUTTON>
+			<BUTTON CLASS="ADDBUTTON" ONCLICK="Add('Miner', 1)">Add</BUTTON>
 		</DIV>
 		<BR />
-		<DIV ID="DISPBSMELTER" STYLE="display: none">
+		<DIV ID="DISPBSMELTER" CLASS="HIDDEN">
 			Bronze Smelters: <SPAN ID="BSmelters">0</SPAN>
 			&nbsp;
 			Alloy Furnaces: <SPAN ID="AlloyFurnaces">0</SPAN>
 		</DIV>
 		<BR />
-		<DIV ID="ALLOYFURNACEBUTTON" STYLE="display: none">
-			<BUTTON CLASS="BUTTON" ID="BuildButton" ONCLICK="Add('AlloyFurnace', 1)">Build Alloy Furnace</BUTTON>
+		<DIV ID="ALLOYFURNACEBUTTON" CLASS="HIDDEN">
+			<BUTTON CLASS="BUILDBUTTON" ONCLICK="Add('AlloyFurnace', 1)">Build Alloy Furnace</BUTTON>
 			<INPUT ID="NALLOYFURN" TYPE="NUMBER" MIN="1" VALUE="1" STEP="1">
 		</DIV>
 		<BR />
-		<DIV ID="DISPBSMELTER2" STYLE="display: none">
-			<BUTTON CLASS="BUTTON" ONCLICK="Add('BSmelter', -1)">Remove</BUTTON>
+		<DIV ID="DISPBSMELTER2" CLASS="HIDDEN">
+			<BUTTON CLASS="ADDBUTTON" ONCLICK="Add('BSmelter', -1)">Remove</BUTTON>
 			<INPUT ID="NBSMELT" TYPE="NUMBER" MIN="1" VALUE="1" STEP="1">
-			<BUTTON CLASS="BUTTON" ONCLICK="Add('BSmelter', 1)">Add</BUTTON>
+			<BUTTON CLASS="ADDBUTTON" ONCLICK="Add('BSmelter', 1)">Add</BUTTON>
 		</DIV>
 		<BR />
-		<DIV ID="DISPSMITH" STYLE="display: none">
+		<DIV ID="DISPSMITH" CLASS="HIDDEN">
 			Smiths: <SPAN ID="Smiths">0</SPAN>
 			&nbsp;
 			Bronze Forges: <SPAN ID="BForges">0</SPAN>
 		</DIV>
 		<BR />
-		<DIV ID="BFORGEBUTTON" STYLE="display: none">
-			<BUTTON ID="BuildButton" CLASS="BUTTON" ONCLICK="Add('BForge', 1)">Build Bronze Forge</BUTTON>
+		<DIV ID="BFORGEBUTTON" CLASS="HIDDEN">
+			<BUTTON CLASS="BUILDBUTTON" ONCLICK="Add('BForge', 1)">Build Bronze Forge</BUTTON>
 			<INPUT ID="NBFORGE" TYPE="NUMBER" MIN="1" VALUE="1" STEP="1">
 		</DIV>
 		<BR /><BR />
-		<DIV ID="DISPSMITH2" STYLE="display: none">
-			<BUTTON CLASS="BUTTON" ONCLICK="Add('Smith', -1)">Remove</BUTTON>
+		<DIV ID="DISPSMITH2" CLASS="HIDDEN">
+			<BUTTON CLASS="ADDBUTTON" ONCLICK="Add('Smith', -1)">Remove</BUTTON>
 			<INPUT ID="NSMITH" TYPE="NUMBER" MIN="1" VALUE="1" STEP="1">
-			<BUTTON CLASS="BUTTON" ONCLICK="Add('Smith', 1)">Add</BUTTON>
+			<BUTTON CLASS="ADDBUTTON" ONCLICK="Add('Smith', 1)">Add</BUTTON>
 		</DIV>
 	</DIV>
 	<DIV ID="BronzeAge" CLASS="TABCONTENT">
@@ -278,9 +278,9 @@
 		</DIV>
 	</DIV>
 	<BR /><BR />
-	<BUTTON TYPE="BUTTON" ONCLICK="Save()">Save</BUTTON>
+	<BUTTON TYPE="ADDBUTTON" ONCLICK="Save()">Save</BUTTON>
 	<BR /><BR />
-	<BUTTON TYPE="BUTTON" ONCLICK="WipeSave()">Wipe Save</BUTTON>
+	<BUTTON TYPE="ADDBUTTON" ONCLICK="WipeSave()">Wipe Save</BUTTON>
 </CENTER>
 <SCRIPT TYPE="TEXT/JAVASCRIPT" SRC="MAIN.js"></SCRIPT>
 </BODY>
