@@ -1,45 +1,50 @@
-BODY {
-	background-color: rgba(25, 25, 25, 1);
-	font-family: "Trebuchet MS", Helvetica, sans-serif;
-	Color: White;
-}
-BUTTON {
-	width: 75px;
-	background-color: rgba(25, 25, 25, 1);
-	border-style: solid;
-	border-width: 2px;
-	border-color: White;
-	font-family: "Trebuchet MS", Helvetica, sans-serif;
-	padding: 3px;
-	transition-duration: 0.3s;
+BODY{
 	color: White;
-	font-size: 15px;
 }
-BUTTON:hover {
-	background-color: rgba(175, 175, 175, 1);
-	color: Black;
+.INTERFACE{
+	height: 100%;
+	width: 75%;
+	position: fixed;
+	z-index: 1;
+	top: 0;
+	overflow-x: hidden;
+	padding-top: 20px;
+	left: 0;
+	background-color: rgba(75, 75, 75, 1);
 }
-.BUILDBUTTON{
-	width: 150px;
+.SIDEBAR{
+	height: 100%;
+	width: 25%;
+	position: fixed;
+	z-index: 1;
+	top: 0;
+	overflow-x: hidden;
+	padding-top: 20px;
+	right: 0;
+	background-color: rgba(25, 25, 25, 1);
 }
-#ARCHB{
-	background-color: rgba(100, 0, 0, 1);
+.CENTER{
+	position: absolute;
+	left: 50%;
+	transform: translate(-50%);
+	text-align: center;
 }
-INPUT {
-	width: 50px;
+.ACCORDION{
+	background-color: rgba(25, 25, 25, 1);
+	cursor: pointer;
+	padding: 18px;
+	width: 100%;
+	border: none;
+	outline: none;
+	transition: 0.25s;
+	color: white;
 }
-.TABLINKS{
-	font-family: "Trebuchet MS", Helvetica, sans-serif;
-	width: 150px;
-	font-weight: bold;
-	font-size: 18px;
+.ACTIVEACCORDION, .ACCORDION:HOVER {
+	background-color: rgba(50, 50, 50, 1);
+}
+.PANEL{
+	padding: 0 18px;
+	background-color: rgba(200, 0, 0, 1);
 	display: none;
-}
-.HIDDEN{
-	display: none;
-}
-.ACTIVE {
-	border-color: White;
-	border-style: solid;
-	border-width: 2px;
+	overflow: hidden;
 }

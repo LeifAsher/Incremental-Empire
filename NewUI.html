@@ -1,0 +1,74 @@
+<HTML>
+<HEAD>
+	<LINK REL="STYLESHEET" TYPE="TEXT/CSS" HREF="INTERFACE.css" />
+	<TITLE>Incremental Empire V2.0</TITLE>
+</HEAD>
+<BODY ONLOAD="Tab(event, 'Archaic')">
+	<DIV CLASS="INTERFACE">
+		<DIV CLASS="CENTER">
+			<H1> Incremental Empire </H1>
+			<DIV CLASS="TAB">
+				<BUTTON CLASS="TABLINKS" ID="ARCHB" ONCLICK="Tab(event, 'ArchaicAge')"> Archaic Age </BUTTON>
+				<BUTTON CLASS="TABLINKS" ID="AGRIB" ONCLICK="Tab(event, 'AgriculturalAge')"> Agricultural Age </BUTTON>
+				<BUTTON CLASS="TABLINKS" ID="STONEB" ONCLICK="Tab(event, 'StoneAge')"> Stone Age </BUTTON>
+			</DIV>
+			<BR />
+			<DIV ID="ArchaicAge" CLASS="TABCONTENT">
+				<BUTTON CLASS="ACCORDION">
+					<SPAN ID="GATHERERS" />
+				</BUTTON>
+				<DIV CLASS="PANEL">
+					<P> Test </P>
+				</DIV>
+				<BR />
+				<BUTTON CLASS="ACCORDION">
+					Craftsmen: <SPAN ID="CRAFTSMEN">0</SPAN>
+				</BUTTON>
+				<DIV CLASS="PANEL">
+					<P> Test 2 </P>
+				</DIV>
+			</DIV>
+			<DIV ID="AgriculturalAge" CLASS="TABCONTENT">
+				<BUTTON CLASS="ACCORDION">
+					Farmers: <SPAN ID="FARMERS">0</SPAN>
+				</BUTTON>
+				<DIV CLASS="PANEL">
+					<P> Test 3 </P>
+				</DIV>
+				<BR />
+				<BUTTON CLASS="ACCORDION">
+					Woodcutters: <SPAN ID="CUTTERS">0</SPAN>
+				</BUTTON>
+				<DIV CLASS="PANEL">
+					<P> Test 4 </P>
+				</DIV>
+			</DIV>
+			<DIV ID="StoneAge" CLASS="TABCONTENT">
+				<BUTTON CLASS="ACCORDION">
+					Carpenters: <SPAN ID="CARPENTERS">0</SPAN>
+				</BUTTON>
+				<DIV CLASS="PANEL">
+					<P> Test 5 </P>
+				</DIV>
+				<BR />
+				<BUTTON CLASS="ACCORDION">
+					Masons: <SPAN ID="MASONS">0</SPAN>
+				</BUTTON>
+				<DIV CLASS="PANEL">
+					<P> Test 6 </P>
+				</DIV>
+			</DIV>
+		</DIV>
+	</DIV>
+	<DIV CLASS="SIDEBAR">
+		<DIV CLASS="CENTER">
+			<H2>
+				Population: <SPAN ID="Population">0</SPAN>
+				<BR />
+				Food: <SPAN ID="Food">0</SPAN>
+			</H2>
+		</DIV>
+	</DIV>
+<SCRIPT TYPE="TEXT/JAVASCRIPT" SRC="MAIN.js"></SCRIPT>
+</BODY>
+</HTML>
