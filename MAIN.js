@@ -2,6 +2,7 @@ var acc = document.getElementsByClassName("ACCORDION");
 var i;
 var Gatherers = 0;
 var TestLoop = setInterval(TestGather, 20);
+var tabcontent, tablinks;
 
 for (i =0; i < acc.length; i++) {
 	acc[i].addEventListener("click", function(){
@@ -15,7 +16,6 @@ for (i =0; i < acc.length; i++) {
 	});
 }
 function Tab(evt, tab){
-	var i, tabcontent, tablinks;
 	tabcontent = document.getElementsByClassName("TABCONTENT");
 	for (i = 0; i < tabcontent.length; i++){
 		tabcontent[i].style.display = "none";

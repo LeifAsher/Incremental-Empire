@@ -10,7 +10,7 @@ BODY{
 	overflow-x: hidden;
 	padding-top: 20px;
 	left: 0;
-	background-color: rgba(75, 75, 75, 1);
+	background-color: rgba(50, 50, 50, 1);
 }
 .SIDEBAR{
 	height: 100%;
@@ -21,7 +21,7 @@ BODY{
 	overflow-x: hidden;
 	padding-top: 20px;
 	right: 0;
-	background-color: rgba(25, 25, 25, 1);
+	background-color: rgba(30, 30, 30, 1);
 }
 .CENTER{
 	position: absolute;
@@ -30,21 +30,21 @@ BODY{
 	text-align: center;
 }
 .ACCORDION{
-	background-color: rgba(25, 25, 25, 1);
+	background-color: rgba(75, 75, 75, 1);
 	cursor: pointer;
 	padding: 18px;
-	width: 100%;
+	width: 600px;
 	border: none;
 	outline: none;
 	transition: 0.25s;
 	color: white;
 }
 .ACTIVEACCORDION, .ACCORDION:HOVER {
-	background-color: rgba(50, 50, 50, 1);
+	background-color: rgba(125, 125, 125, 1);
 }
 .PANEL{
-	padding: 0 18px;
-	background-color: rgba(200, 0, 0, 1);
+	padding: 18px;
+	background-color: rgba(100, 100, 100, 1);
 	display: none;
 	overflow: hidden;
 }

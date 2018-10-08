@@ -14,13 +14,15 @@
 			</DIV>
 			<BR />
 			<DIV ID="ArchaicAge" CLASS="TABCONTENT">
-				<BUTTON CLASS="ACCORDION">
-					<SPAN ID="GATHERERS" />
-				</BUTTON>
+				<BUTTON CLASS="ACCORDION" ID="GATHERERS"></BUTTON>
 				<DIV CLASS="PANEL">
-					<P> Test </P>
+					Gatherers produce 1.25 food per second and 0.25 thatch per second.
+					<P> Your gatherers produce <SPAN ID="THATCHINCOME">0</SPAN> thatch per second. </P>
+					<BUTTON CLASS="ADDBUTTON" ONCLICK="Add('Gatherer', -1)">Remove</BUTTON>
+					<INPUT ID="NGATHER" TYPE="NUMBER" MIN="1" VALUE="1" STEP="1">
+					<BUTTON CLASS="ADDBUTTON" ONCLICK="Add('Gatherer', 1)">Add</BUTTON>
 				</DIV>
-				<BR />
+				<BR /><BR />
 				<BUTTON CLASS="ACCORDION">
 					Craftsmen: <SPAN ID="CRAFTSMEN">0</SPAN>
 				</BUTTON>
@@ -63,10 +65,12 @@
 	<DIV CLASS="SIDEBAR">
 		<DIV CLASS="CENTER">
 			<H2>
-				Population: <SPAN ID="Population">0</SPAN>
-				<BR />
-				Food: <SPAN ID="Food">0</SPAN>
+				Population: <SPAN ID="Population">0</SPAN> <SPAN ID="PopulationGrowth">(+0/s)</SPAN>
 			</H2>
+			<BUTTON CLASS="ACCORDION" ID="Population"> Population: 10 </BUTTON>
+			<DIV CLASS="PANEL">
+				<P> Test </P>
+			</DIV>
 		</DIV>
 	</DIV>
 <SCRIPT TYPE="TEXT/JAVASCRIPT" SRC="MAIN.js"></SCRIPT>
