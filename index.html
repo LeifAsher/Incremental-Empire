@@ -3,7 +3,7 @@
 	<LINK REL="STYLESHEET" TYPE="TEXT/CSS" HREF="INTERFACE.css" />
 	<TITLE>Incremental Empire V2.0</TITLE>
 </HEAD>
-<BODY ONLOAD="Tab(event, 'Archaic')">
+<BODY ONLOAD="Initialize()">
 	<DIV CLASS="INTERFACE">
 		<DIV CLASS="CENTER">
 			<H1> Incremental Empire </H1>
@@ -41,7 +41,7 @@
 					<INPUT ID="NHUNT" TYPE="NUMBER" MIN="1" VALUE="1" STEP="1">
 					<BUTTON CLASS="ADDBUTTON" ONCLICK="Add('Hunter', 1)">Add</BUTTON>
 				</DIV>
-				<BR /><BR />
+				<BR />
 				<BUTTON ID="DISPLABOR" CLASS="ACCORDION HIDDEN"> Laborers: <SPAN ID="Laborers">0</SPAN></BUTTON>
 				<DIV CLASS="PANEL">
 					Laborers require tools, consume 1 thatch and 1 hide, and produce 0.2 shelter per second.
@@ -50,7 +50,7 @@
 					<INPUT ID="NLABOR" TYPE="NUMBER" MIN="1" VALUE="1" STEP="1">
 					<BUTTON CLASS="ADDBUTTON" ONCLICK="Add('Laborer', 1)">Add</BUTTON>
 				</DIV>
-				<BR /><BR />
+				<BR />
 				<BUTTON ID="DISPARTISAN" CLASS="ACCORDION HIDDEN"> Artisans: <SPAN ID="Artisans">0</SPAN></BUTTON>
 				<DIV CLASS="PANEL">
 					Artisans require tools, consume 1 tool and 1 hide, and produce 0.2 level 2 tools per second.
@@ -211,22 +211,85 @@
 					<INPUT ID="NBFORGE" TYPE="NUMBER" MIN="1" VALUE="1" STEP="1">
 				</DIV>
 			</DIV>
+		<BR /><BR />
+		<BUTTON TYPE="ADDBUTTON" ONCLICK="Save()">Save</BUTTON>
+		<BR /><BR />
+		<BUTTON TYPE="ADDBUTTON" ONCLICK="WipeSave()">Wipe Save</BUTTON>
 		</DIV>
 	</DIV>
 	<DIV CLASS="SIDEBAR">
 		<DIV CLASS="CENTER">
-			<BUTTON CLASS="ACCORDION"> Population: <SPAN ID="Population">0</SPAN> </BUTTON>
-			<DIV CLASS="PANEL">
-				Your population requires empty shelter and food to grow. Each citizen requires 1 shelter and 1 food per second.
-				<P>Your population is currently growing at <SPAN ID="PopulationGrowth">0/s</SPAN>, limited by <SPAN ID="PopulationLimiter">shelter</SPAN>.</P>
+			<BUTTON CLASS="ACCORDION"> Population: <SPAN ID="Population">10</SPAN> </BUTTON><DIV CLASS="PANEL">
+				Your population requires empty shelter and food to grow.
+				<P>Your population is currently growing at <SPAN ID="PopulationGrowth">0/s</SPAN>,
+				<BR />
+				limited by <SPAN ID="PopulationLimiter">shelter</SPAN>.</P>
 				<SPAN ID="Unemployed">10</SPAN> citizens are currently unemployed.
-			</DIV>
-			<BR /><BR />
-			<BUTTON CLASS="ACCORDION"> Food: <SPAN ID="Food">0</SPAN> </BUTTON>
-			<DIV CLASS="PANEL">
-				Your Population requires food to grow and each citizen consumes 1 food per second.
-				<P>You are currently producing <SPAN ID="FoodIncome">0</SPAN> food per second.
-			</DIV>
+			</DIV><BR /><BR />
+			<BUTTON CLASS="ACCORDION"> Food: <SPAN ID="Food">0</SPAN> </BUTTON><DIV CLASS="PANEL">
+				Each citizen consumes 1 food per second.
+				<BR />
+				You are currently producing <SPAN ID="FoodIncome">0</SPAN> food per second.
+			</DIV><BR /><BR />
+			<BUTTON CLASS="ACCORDION"> Shelter: <SPAN ID="Shelter">0</SPAN> </BUTTON><DIV CLASS="PANEL">
+				Each citizen requires 1 shelter.
+				<BR />
+				You have <SPAN ID="EmptyShelter">0</SPAN> empty shelter.
+				<BR />
+				You are currently producing <SPAN ID="ShelterIncome">0</SPAN> shelter per second.
+			</DIV><BR /><BR />
+			<BUTTON CLASS="ACCORDION"> Tools </BUTTON><DIV CLASS="PANEL">
+				Level 1: <SPAN ID="Tool1">0</SPAN>
+				<DIV ID="DISPTOOL2" CLASS="HIDDEN">Level 2: <SPAN ID="Tool2">0</SPAN></DIV>
+				<DIV ID="DISPTOOL3" CLASS="HIDDEN">Level 3: <SPAN ID="Tool3">0</SPAN></DIV>
+				<DIV ID="DISPTOOL4" CLASS="HIDDEN">Level 4: <SPAN ID="Tool4">0</SPAN></DIV>
+				<DIV ID="DISPTOOL5" CLASS="HIDDEN">Level 5: <SPAN ID="Tool5">0</SPAN></DIV>
+			</DIV><BR /><BR />
+			<BUTTON CLASS="ACCORDION"> Thatch: <SPAN ID="Thatch">0</SPAN></BUTTON><DIV CLASS="PANEL">
+				You are currently producing <SPAN ID="ThatchIncome">0</SPAN> thatch per second.
+			</DIV><BR /><BR />
+			<BUTTON ID="DISPHIDE" CLASS="ACCORDION HIDDEN"> Hide </BUTTON><DIV CLASS="PANEL">
+				Hide: <SPAN ID="Hide">0</SPAN><BR />
+				You are currently producing <SPAN ID="HideIncome">0</SPAN> hide per second.
+				<DIV ID="DISPLEATHER" CLASS="HIDDEN">
+					Leather: <SPAN ID="Leather">0</SPAN>
+					You are currently producing <SPAN ID="LeatherIncome">0</SPAN> leather per second.
+				</DIV>
+			</DIV><BR /><BR />
+			<BUTTON ID="DISPWOOD" CLASS="ACCORDION HIDDEN"> Wood </BUTTON><DIV CLASS="PANEL">
+				Wood: <SPAN ID="Wood">0</SPAN><BR />
+				You are currently producing <SPAN ID="WoodIncome">0</SPAN> wood per second.
+				<DIV ID="DISPLUMBER" CLASS="HIDDEN">
+					Lumber is made from wood and used to build shelter.
+					Lumber: <SPAN ID="Lumber">0</SPAN><BR />
+					You are currently producing <SPAN ID="LumberIncome">0</SPAN> lumber per second.
+				</DIV>
+			</DIV><BR /><BR />
+			<BUTTON ID="DISPROCK" CLASS="ACCORDION HIDDEN"> Rock </BUTTON><DIV CLASS="PANEL">
+				Rock: <SPAN ID="Rock">0</SPAN><BR />
+				You are currently producing <SPAN ID="RockIncome">0</SPAN> rock per second.
+				<DIV ID="DISPSTONE" CLASS="HIDDEN">
+					Stone is made from rock and used to build shelter.
+					Stone: <SPAN ID="Stones">0</SPAN><BR />
+					You are currently producing <SPAN ID="StoneIncome">0</SPAN> stone per second.
+				</DIV>
+			</DIV><BR /><BR />
+			<BUTTON ID="DISPCOPPERORE" CLASS="ACCORDION HIDDEN"> Copper </BUTTON><DIV CLASS="PANEL">
+				Copper Ore: <SPAN ID="CopperOre">0</SPAN><BR />
+				You are currently producing <SPAN ID="CopperOreIncome">0</SPAN> copper ore per second.
+				<DIV ID="DISPCOPPERBARS" CLASS="HIDDEN">
+					Copper: <SPAN ID="CopperBars">0</SPAN><BR />
+					You are currently producing <SPAN ID="CopperBarIncome">0</SPAN> copper bars per second.
+				</DIV>
+				<DIV ID="DISPTIN" CLASS="HIDDEN">
+					Tin: <SPAN ID="Tin">0</SPAN><BR />
+					You are currently producing <SPAN ID="TinIncome">0</SPAN> tin per second.
+				</DIV>
+				<DIV ID="DISPBRONZE" CLASS="HIDDEN">
+					Bronze: <SPAN ID="Bronze">0</SPAN><BR />
+					You are currently producing <SPAN ID="BronzeIncome">0</SPAN> bronze per second.
+				</DIV>
+			</DIV><BR /><BR />
 		</DIV>
 	</DIV>
 <SCRIPT TYPE="TEXT/JAVASCRIPT" SRC="MAIN.js"></SCRIPT>

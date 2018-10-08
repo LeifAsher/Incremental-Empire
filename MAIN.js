@@ -43,8 +43,6 @@ var BSmelters = 0;
 var Smiths = 0;
 var AlloyFurnaces = 0;
 var BForges = 0;
-var Looper = setInterval(Loop, 20);
-var AutoSaver = setInterval(Save, 30000);
 var acc = document.getElementsByClassName("ACCORDION");
 var i;}
 
@@ -60,8 +58,10 @@ for (i =0; i < acc.length; i++) {
 	});
 }
 function Initialize(){
-	Tab(event, 'Archaic');
+	Tab(event, 'ArchaicAge');
 	Load();
+	var Looper = setInterval(Loop, 20);
+	var AutoSaver = setInterval(Save, 30000);
 }
 function Tab(evt, tab){
 	var i, tabcontent, tablinks;
