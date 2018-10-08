@@ -1,5 +1,6 @@
 BODY{
 	color: White;
+	font-family: "Trebuchet MS", Helvetica, sans-serif;
 }
 .INTERFACE{
 	height: 100%;
@@ -38,6 +39,7 @@ BODY{
 	outline: none;
 	transition: 0.25s;
 	color: white;
+	font-family: "Trebuchet MS", Helvetica, sans-serif;
 }
 .ACTIVEACCORDION, .ACCORDION:HOVER {
 	background-color: rgba(125, 125, 125, 1);
@@ -47,4 +49,14 @@ BODY{
 	background-color: rgba(100, 100, 100, 1);
 	display: none;
 	overflow: hidden;
+	font-family: "Trebuchet MS", Helvetica, sans-serif;
+}
+.TABLINKS {
+	font-family: "Trebuchet MS", Helvetica, sans-serif;
+	width: 150px;
+	font-weight: bold;
+	font-size: 18px;
+}
+.HIDDEN {
+	display: none;
 }
