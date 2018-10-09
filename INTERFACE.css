@@ -4,7 +4,7 @@ BODY{
 }
 .INTERFACE{
 	height: 100%;
-	width: 75%;
+	width: 70%;
 	position: fixed;
 	z-index: 1;
 	top: 0;
@@ -16,7 +16,7 @@ BODY{
 }
 .SIDEBAR{
 	height: 100%;
-	width: 25%;
+	width: 30%;
 	position: fixed;
 	z-index: 1;
 	top: 0;

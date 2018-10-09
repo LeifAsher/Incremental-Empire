@@ -1,4 +1,5 @@
-{var Population = 10;
+{
+var Population = 10;
 var Food = 0;
 var Thatch = 0;
 var Hide = 0;
@@ -44,8 +45,8 @@ var Smiths = 0;
 var AlloyFurnaces = 0;
 var BForges = 0;
 var acc = document.getElementsByClassName("ACCORDION");
-var i;}
-
+var i;
+}
 for (i =0; i < acc.length; i++) {
 	acc[i].addEventListener("click", function(){
 		this.classList.toggle("ACTIVEACCORDION");
@@ -199,73 +200,73 @@ function Gather(){
 	};
 }
 function AchievementCheck(){
+	if(Thatch > 0){
+		DISPTHATCH.style.display = "block";
+		DISPCRAFTSMAN.style.display = "block";
+	}
 	if(Tool1 > 0){
 		DISPHUNTER.style.display = "block";
+		DISPTOOL1.style.display = "block";
+	}
+	if(Hide > 0){
+		DISPHIDE.style.display = "block";
+		DISPLABOR.style.display = "block";
+		DISPARTISAN.style.display = "block";
 	}
 	if(Tool2 > 0){
 		AGRIB.style.display = "inline-block";
 		ARCHB.style.display = "inline-block";
+		DISPTOOL2.style.display = "block";
 	}
-	if(Tool3 > 0){
-		STONEB.style.display = "inline-block";
+	if(Rock > 0){
+		DISPROCK.style.display = "block";
 	}
-	if(Tool4 > 0){
-		COPPERB.style.display = "inline-block";
-	}
-	if(Tool5 > 0){
-		BUTTONROW2.style.display = "block";
-		BRONZEB.style.display = "block";
-	}
-	if(Hide > 0){
-		DISPLABOR.style.display = "block";
-		DISPARTISAN.style.display = "block";
+	if(Wood > 0){
+		DISPWOOD.style.display = "block";
 	}
 	if(Rock > 0 && Wood > 0){
 		DISPARTIFICER.style.display = "block";
+	}
+	if(Tool3 > 0){
+		STONEB.style.display = "inline-block";
+		DISPTOOL3.style.display = "block";
+	}
+	if(Tool4 > 0){
+		COPPERB.style.display = "inline-block";
+		DISPTOOL4.style.display = "block";
+	}
+	if(Tool5 > 0){
+		BRONZEB.style.display = "inline-block";
+		DISPTOOL5.style.display = "block";
+		BUTTONROW2.style.display = "block";
 	}
 	if(Lumber > 0 && Stones > 0){
 		DISPBUILDER.style.display = "block";
 	}
 	if(Lumber > 0){
-		DISPLUMBER.style.display = "inline-block";
+		DISPLUMBER.style.display = "block";
 	}
 	if(Stones > 0){
-		DISPSTONES.style.display = "inline-block";
+		DISPSTONE.style.display = "block";
 	}
 	if(Builders > 0){
-		FURNACEBUTTON.style.display = "block";
+		DISPSMELTER.style.display = "block";
+		DISPCOPPERORE.style.display = "block";
 	}
 	if(CopperBars > 0){
-		FORGEBUTTON.style.display = "block";
-		DISPCOPPERBARS.style.display = "inline-block";
-	}
-	if(Furnaces > 0){
-		DISPSMELTER.style.display = "block";
-		DISPSMELTER2.style.display = "block";
-		DISPCOPPERORE.style.display = "inline-block";
-	}
-	if(Forges > 0){
 		DISPWRIGHT.style.display = "block";
-		DISPWRIGHT2.style.display = "block";
+		DISPCOPPERBARS.style.display = "block";
 	}
 	if(Leather > 0){
-		DISPLEATHER.style.display = "inline-block";
+		DISPLEATHER.style.display = "block";
 	}
 	if(Tin > 0){
-		DISPTIN.style.display = "inline-block";
-		ALLOYFURNACEBUTTON.style.display = "block";
+		DISPTIN.style.display = "block";
+		DISPBSMELTER.style.display = "block";
 	}
 	if(Bronze > 0){
-		BFORGEBUTTON.style.display = "inline-block";
-		DISPBRONZE.style.display = "inline-block";
-	}
-	if(BForges > 0){
 		DISPSMITH.style.display = "block";
-		DISPSMITH2.style.display = "block";
-	}
-	if(AlloyFurnaces > 0){
-		DISPBSMELTER.style.display = "block";
-		DISPBSMELTER2.style.display = "block";
+		DISPBRONZE.style.display = "block";
 	}
 }
 function Add(type, n){
