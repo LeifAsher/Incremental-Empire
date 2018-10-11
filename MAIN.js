@@ -1,4 +1,5 @@
-{var Population = 10;
+{
+var Population = 10;
 var Food = 0;
 var Thatch = 0;
 var Hide = 0;
@@ -43,11 +44,25 @@ var BSmelters = 0;
 var Smiths = 0;
 var AlloyFurnaces = 0;
 var BForges = 0;
-var Looper = setInterval(Loop, 20);
-var AutoSaver = setInterval(Save, 30000);}
+var acc = document.getElementsByClassName("ACCORDION");
+var i;
+}
+for (i =0; i < acc.length; i++) {
+	acc[i].addEventListener("click", function(){
+		this.classList.toggle("ACTIVEACCORDION");
+		var panel = this.nextElementSibling;
+		if (panel.style.display === "block") {
+			panel.style.display = "none";
+		} else {
+			panel.style.display = "block";
+		}
+	});
+}
 function Initialize(){
-	Tab(event, 'Archaic');
+	Tab(event, 'ArchaicAge');
 	Load();
+	var Looper = setInterval(Loop, 20);
+	var AutoSaver = setInterval(Save, 30000);
 }
 function Tab(evt, tab){
 	var i, tabcontent, tablinks;
@@ -57,20 +72,21 @@ function Tab(evt, tab){
 	}
 	tablinks = document.getElementsByClassName("TABLINKS");
 	for (i = 0; i < tablinks.length; i++) {
-        tablinks[i].className = tablinks[i].className.replace(" active", "");
+        tablinks[i].className = tablinks[i].className.replace(" ACTIVEAGE", "");
     }
 	document.getElementById(tab).style.display = "block";
-    evt.currentTarget.className += " active";
+    evt.currentTarget.className += " ACTIVEAGE";
 }
 function Populate(){
 	var NewFood = Food - Population/50;
 	Food = Math.max(NewFood, 0);
 	if(NewFood >= 0 && EmptyShelter >= Population*0.0002){
-		Population += Population*0.0002
+		Population += Population*0.0002;
 	}
 }
 function UpdateDisp(){
 	EmptyShelter = Math.max(Math.floor(Shelter) - Math.floor(Population), 0);
+	document.getElementById("Gatherers").innerHTML = Gatherers;
 	document.getElementById("Unemployed").innerHTML = Unemployed;
 	document.getElementById("EmptyShelter").innerHTML = EmptyShelter;
 	document.getElementById("Population").innerHTML = Math.floor(Population);
@@ -80,7 +96,6 @@ function UpdateDisp(){
 	document.getElementById("Hide").innerHTML = Math.floor(Hide);
 	document.getElementById("Tool1").innerHTML = Math.floor(Tool1);
 	document.getElementById("Tool2").innerHTML = Math.floor(Tool2);
-	document.getElementById("Gatherers").innerHTML = Gatherers;
 	document.getElementById("Craftsmen").innerHTML = Craftsmen;
 	document.getElementById("Hunters").innerHTML = Hunters;
 	document.getElementById("Laborers").innerHTML = Laborers;
@@ -170,7 +185,7 @@ function Gather(){
 	};
 	if(Hide >= Tanners/5){
 		Leather = Leather + Tanners/50;
-		Hide = Hide - Tanners/5;
+		Hide = Hide - Tanners/10;
 	};
 	if(CopperOre >= 9*BSmelters/50 && Tin >= BSmelters/50){
 		Bronze = Bronze + BSmelters/50;
@@ -185,73 +200,72 @@ function Gather(){
 	};
 }
 function AchievementCheck(){
+	if(Thatch > 0){
+		DISPTHATCH.style.display = "block";
+		DISPCRAFTSMAN.style.display = "block";
+	}
 	if(Tool1 > 0){
 		DISPHUNTER.style.display = "block";
+		DISPTOOL1.style.display = "block";
+	}
+	if(Hide > 0){
+		DISPHIDE.style.display = "block";
+		DISPLABOR.style.display = "block";
+		DISPARTISAN.style.display = "block";
 	}
 	if(Tool2 > 0){
 		AGRIB.style.display = "inline-block";
 		ARCHB.style.display = "inline-block";
+		DISPTOOL2.style.display = "block";
 	}
-	if(Tool3 > 0){
-		STONEB.style.display = "inline-block";
+	if(Rock > 0){
+		DISPROCK.style.display = "block";
 	}
-	if(Tool4 > 0){
-		COPPERB.style.display = "inline-block";
-	}
-	if(Tool5 > 0){
-		BUTTONROW2.style.display = "block";
-		BRONZEB.style.display = "block";
-	}
-	if(Hide > 0){
-		DISPLABOR.style.display = "block";
-		DISPARTISAN.style.display = "block";
+	if(Wood > 0){
+		DISPWOOD.style.display = "block";
 	}
 	if(Rock > 0 && Wood > 0){
 		DISPARTIFICER.style.display = "block";
+	}
+	if(Tool3 > 0){
+		STONEB.style.display = "inline-block";
+		DISPTOOL3.style.display = "block";
+	}
+	if(Tool4 > 0){
+		COPPERB.style.display = "inline-block";
+		DISPTOOL4.style.display = "block";
+	}
+	if(Tool5 > 0){
+		BRONZEB.style.display = "inline-block";
+		DISPTOOL5.style.display = "block";
 	}
 	if(Lumber > 0 && Stones > 0){
 		DISPBUILDER.style.display = "block";
 	}
 	if(Lumber > 0){
-		DISPLUMBER.style.display = "inline-block";
+		DISPLUMBER.style.display = "block";
 	}
 	if(Stones > 0){
-		DISPSTONES.style.display = "inline-block";
+		DISPSTONE.style.display = "block";
 	}
 	if(Builders > 0){
-		FURNACEBUTTON.style.display = "block";
+		DISPSMELTER.style.display = "block";
+		DISPCOPPERORE.style.display = "block";
 	}
 	if(CopperBars > 0){
-		FORGEBUTTON.style.display = "block";
-		DISPCOPPERBARS.style.display = "inline-block";
-	}
-	if(Furnaces > 0){
-		DISPSMELTER.style.display = "block";
-		DISPSMELTER2.style.display = "block";
-		DISPCOPPERORE.style.display = "inline-block";
-	}
-	if(Forges > 0){
 		DISPWRIGHT.style.display = "block";
-		DISPWRIGHT2.style.display = "block";
+		DISPCOPPERBARS.style.display = "block";
 	}
 	if(Leather > 0){
-		DISPLEATHER.style.display = "inline-block";
+		DISPLEATHER.style.display = "block";
 	}
 	if(Tin > 0){
-		DISPTIN.style.display = "inline-block";
-		ALLOYFURNACEBUTTON.style.display = "block";
+		DISPTIN.style.display = "block";
+		DISPBSMELTER.style.display = "block";
 	}
 	if(Bronze > 0){
-		BFORGEBUTTON.style.display = "inline-block";
-		DISPBRONZE.style.display = "inline-block";
-	}
-	if(BForges > 0){
 		DISPSMITH.style.display = "block";
-		DISPSMITH2.style.display = "block";
-	}
-	if(AlloyFurnaces > 0){
-		DISPBSMELTER.style.display = "block";
-		DISPBSMELTER2.style.display = "block";
+		DISPBRONZE.style.display = "block";
 	}
 }
 function Add(type, n){
@@ -497,6 +511,7 @@ function Save(){
 };
 function Load(){
 	var savegame = JSON.parse(localStorage.getItem("save"));
+	if (savegame !== null){
 	if (typeof savegame.Population !== "undefined") Population = savegame.Population;
 	if (typeof savegame.Food !== "undefined") Food = savegame.Food;
 	if (typeof savegame.Thatch !== "undefined") Thatch = savegame.Thatch;
@@ -540,6 +555,7 @@ function Load(){
 	if (typeof savegame.Smiths !== "undefined") Smiths = savegame.Smiths;
 	if (typeof savegame.AlloyFurnaces !== "undefined") AlloyFurnaces = savegame.AlloyFurnaces;
 	if (typeof savegame.BForges !== "undefined") BForges = savegame.BForges;
+	}
 };
 function WipeSave(){
 	localStorage.removeItem("save");
