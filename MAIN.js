@@ -81,7 +81,7 @@ function Populate(){
 	var NewFood = Food - Population/50;
 	Food = Math.max(NewFood, 0);
 	if(NewFood >= 0 && EmptyShelter >= Population*0.0002){
-		Population += Population*0.0002
+		Population += Population*0.0002;
 	}
 }
 function UpdateDisp(){
@@ -238,7 +238,6 @@ function AchievementCheck(){
 	if(Tool5 > 0){
 		BRONZEB.style.display = "inline-block";
 		DISPTOOL5.style.display = "block";
-		BUTTONROW2.style.display = "block";
 	}
 	if(Lumber > 0 && Stones > 0){
 		DISPBUILDER.style.display = "block";
@@ -512,6 +511,7 @@ function Save(){
 };
 function Load(){
 	var savegame = JSON.parse(localStorage.getItem("save"));
+	if (savegame !== null){
 	if (typeof savegame.Population !== "undefined") Population = savegame.Population;
 	if (typeof savegame.Food !== "undefined") Food = savegame.Food;
 	if (typeof savegame.Thatch !== "undefined") Thatch = savegame.Thatch;
@@ -555,6 +555,7 @@ function Load(){
 	if (typeof savegame.Smiths !== "undefined") Smiths = savegame.Smiths;
 	if (typeof savegame.AlloyFurnaces !== "undefined") AlloyFurnaces = savegame.AlloyFurnaces;
 	if (typeof savegame.BForges !== "undefined") BForges = savegame.BForges;
+	}
 };
 function WipeSave(){
 	localStorage.removeItem("save");
