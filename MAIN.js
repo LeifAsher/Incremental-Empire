@@ -86,7 +86,7 @@ function Populate(){
 }
 function UpdateDisp(){
 	EmptyShelter = Math.max(Math.floor(Shelter) - Math.floor(Population), 0);
-	document.getElementById("Gatherers").innerHTML = Gatherers;
+	{document.getElementById("Gatherers").innerHTML = Gatherers;
 	document.getElementById("Unemployed").innerHTML = Unemployed;
 	document.getElementById("EmptyShelter").innerHTML = EmptyShelter;
 	document.getElementById("Population").innerHTML = Math.floor(Population);
@@ -130,7 +130,50 @@ function UpdateDisp(){
 	document.getElementById("Smiths").innerHTML = Math.floor(Smiths);
 	document.getElementById("AlloyFurnaces").innerHTML = Math.floor(AlloyFurnaces);
 	document.getElementById("BForges").innerHTML = Math.floor(BForges);
-	document.getElementById("Tool5").innerHTML = Math.floor(Tool5);
+	document.getElementById("Tool5").innerHTML = Math.floor(Tool5);}
+	{document.getElementById("GathererFoodIncome").innerHTML = 1.25 * Gatherers;
+	document.getElementById("GathererThatchIncome").innerHTML = 0.25 * Gatherers;
+	document.getElementById("CraftsmanThatchConsumption").innerHTML = Craftsmen;
+	document.getElementById("CraftsmanIncome").innerHTML = 0.2 * Craftsmen;
+	document.getElementById("HunterFoodIncome").innerHTML = 1.25 * Hunters;
+	document.getElementById("HunterHideIncome").innerHTML = 0.2 * Hunters;
+	document.getElementById("LaborerConsumption").innerHTML = Craftsmen;
+	document.getElementById("LaborerIncome").innerHTML = 0.2 * Laborers;
+	document.getElementById("ArtisanHideConsumption").innerHTML = Artisans;
+	document.getElementById("ArtisanToolConsumption").innerHTML = Artisans;
+	document.getElementById("ArtisanIncome").innerHTML = 0.2 * Artisans;
+	document.getElementById("FarmerIncome").innerHTML = 1.5 * Farmers;
+	document.getElementById("CutterIncome").innerHTML = 0.5 * Cutters;
+	document.getElementById("DiggerRockIncome").innerHTML = 0.25 * Diggers;
+	document.getElementById("DiggerCopperOreIncome").innerHTML = 0.1 * Diggers;
+	document.getElementById("ArtificerWoodConsumption").innerHTML = Artificers;
+	document.getElementById("ArtificerRockConsumption").innerHTML = 1.25 * Artificers;
+	document.getElementById("CarpenterConsumption").innerHTML = Carpenters;
+	document.getElementById("CarpenterIncome").innerHTML = 0.5 * Carpenters;
+	document.getElementById("MasonConsumption").innerHTML = Masons;
+	document.getElementById("MasonIncome").innerHTML = 0.25 * Masons;
+	document.getElementById("ArtificerIncome").innerHTML = 0.2 * Artificers;
+	document.getElementById("SmelterIncome").innerHTML = 0.25 * Smelters;
+	document.getElementById("SmelterConsumption").innerHTML = Smelters;
+	document.getElementById("WrightLumberConsumption").innerHTML = Wrights;
+	document.getElementById("WrightCopperConsumption").innerHTML = Wrights;
+	document.getElementById("WrightIncome").innerHTML = 0.2 * Wrights;
+	document.getElementById("TrapperHideIncome").innerHTML = Trappers;
+	document.getElementById("TrapperFoodIncome").innerHTML = 1.5 * Trappers;
+	document.getElementById("TannerIncome").innerHTML = Tanners;
+	document.getElementById("TannerConsumption").innerHTML = 5 * Tanners;
+	document.getElementById("LumberjackIncome").innerHTML = Lumberjacks;
+	document.getElementById("MinerStoneIncome").innerHTML = Miners;
+	document.getElementById("MinerTinIncome").innerHTML = 0.5 * Miners;
+	document.getElementById("MinerCopperOreIncome").innerHTML = 0.5 * Miners;
+	document.getElementById("BSmelterCopperOreConsumption").innerHTML = 9 * BSmelters;
+	document.getElementById("BSmelterTinConsumption").innerHTML = BSmelters;
+	document.getElementById("BSmelterIncome").innerHTML = BSmelters;
+	document.getElementById("SmithBronzeConsumption").innerHTML = Smiths;
+	document.getElementById("SmithLeatherConsumption").innerHTML = Smiths;
+	document.getElementById("SmithLumberConsumption").innerHTML = Smiths;
+	document.getElementById("SmithIncome").innerHTML = 0.2 * Smiths;}
+	document.getElementById("FoodIncome").innerHTML = 1.25*(Gatherers + Hunters) + 1.5*(Farmers + Trappers) - Math.floor(Population);
 }
 function Gather(){
 	Food = Food + Gatherers/40 + Hunters/40 + 1.5*Farmers/50 + 1.5*Trappers/50;

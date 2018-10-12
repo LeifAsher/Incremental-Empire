@@ -25,7 +25,7 @@
 				</DIV><BR />
 				<BUTTON ID="DISPCRAFTSMAN" CLASS="ACCORDION HIDDEN"> Craftsmen: <SPAN ID="Craftsmen">0</SPAN></BUTTON><DIV CLASS="PANEL">
 					Craftsmen consume 1 thatch and produce 0.2 tools per second.
-					<P> Your craftsmen produce <SPAN ID="TOOL1INCOME">0</SPAN> tools per second. </P>
+					<P> Your craftsmen consume <SPAN ID="CraftsmanThatchConsumption">0</SPAN> and produce <SPAN ID="CraftsmanIncome">0</SPAN> tools per second. </P>
 					<BUTTON CLASS="ADDBUTTON" ONCLICK="Add('Craftsman', -1)">Remove</BUTTON>
 					<INPUT ID="NCRAFT" TYPE="NUMBER" MIN="1" VALUE="1" STEP="1">
 					<BUTTON CLASS="ADDBUTTON" ONCLICK="Add('Craftsman', 1)">Add</BUTTON>
@@ -39,14 +39,14 @@
 				</DIV><BR />
 				<BUTTON ID="DISPLABOR" CLASS="ACCORDION HIDDEN"> Laborers: <SPAN ID="Laborers">0</SPAN></BUTTON><DIV CLASS="PANEL">
 					Laborers require tools, consume 1 thatch and 1 hide, and produce 0.2 shelter per second.
-					<P> Your laborers produce <SPAN ID="LaborerIncome">0</SPAN> shelter per second. </P>
+					<P> Your laborers consume <SPAN ID="LaborerConsumption">0</SPAN> thatch and hide and produce <SPAN ID="LaborerIncome">0</SPAN> shelter per second. </P>
 					<BUTTON CLASS="ADDBUTTON" ONCLICK="Add('Laborer', -1)">Remove</BUTTON>
 					<INPUT ID="NLABOR" TYPE="NUMBER" MIN="1" VALUE="1" STEP="1">
 					<BUTTON CLASS="ADDBUTTON" ONCLICK="Add('Laborer', 1)">Add</BUTTON>
 				</DIV><BR />
 				<BUTTON ID="DISPARTISAN" CLASS="ACCORDION HIDDEN"> Artisans: <SPAN ID="Artisans">0</SPAN></BUTTON><DIV CLASS="PANEL">
 					Artisans require tools, consume 1 tool and 1 hide, and produce 0.2 level 2 tools per second.
-					<P> Your artisans produce <SPAN ID="ArtisanIncome">0</SPAN> level 2 tools per second. </P>
+					<P> Your artisans consume <SPAN ID="ArtisanToolConsumption">0</SPAN> level 1 tools and <SPAN ID="ArtisanHideConsumption">0</SPAN> hide, and produce <SPAN ID="ArtisanIncome">0</SPAN> level 2 tools per second. </P>
 					<BUTTON CLASS="ADDBUTTON" ONCLICK="Add('Artisan', -1)">Remove</BUTTON>
 					<INPUT ID="NART" TYPE="NUMBER" MIN="1" VALUE="1" STEP="1">
 					<BUTTON CLASS="ADDBUTTON" ONCLICK="Add('Artisan', 1)">Add</BUTTON>
@@ -76,7 +76,7 @@
 				</DIV><BR />
 				<BUTTON ID="DISPARTIFICER" CLASS="ACCORDION HIDDEN"> Artificers: <SPAN ID="Artificers">0</SPAN></BUTTON><DIV CLASS="PANEL">
 					Artificers require level 2 tools, consume 1 wood and 1.25 rock, and produce 0.2 level 3 tools per second.
-					<P> Your artificers produce <SPAN ID="ArtificerIncome">0</SPAN> level 3 tools per second. </P>
+					<P> Your artificers consume <SPAN ID="ArtificerWoodConsumption">0</SPAN> wood and <SPAN ID="ArtificerRockConsumption">0</SPAN> rock, and produce <SPAN ID="ArtificerIncome">0</SPAN> level 3 tools per second. </P>
 					<BUTTON CLASS="ADDBUTTON" ONCLICK="Add('Artificer', -1)">Remove</BUTTON>
 					<INPUT ID="NARTIFICE" TYPE="NUMBER" MIN="1" VALUE="1" STEP="1">
 					<BUTTON CLASS="ADDBUTTON" ONCLICK="Add('Artificer', 1)">Add</BUTTON>
@@ -85,28 +85,28 @@
 			<DIV ID="StoneAge" CLASS="TABCONTENT">
 				<BUTTON CLASS="ACCORDION" STYLE="display: block"> Carpenters: <SPAN ID="Carpenters">0</SPAN></BUTTON><DIV CLASS="PANEL">
 					Carpenters require level 3 tools, consume 1 wood, and produce 0.5 lumber per second.
-					<P> Your carpenters produce <SPAN ID="CarpenterIncome">0</SPAN> lumber per second. </P>
+					<P> Your carpenters consume <SPAN ID="CarpenterConsumption">0</SPAN> wood and produce <SPAN ID="CarpenterIncome">0</SPAN> lumber per second. </P>
 					<BUTTON CLASS="ADDBUTTON" ONCLICK="Add('Carpenter', -1)">Remove</BUTTON>
 					<INPUT ID="NCARP" TYPE="NUMBER" MIN="1" VALUE="1" STEP="1">
 					<BUTTON CLASS="ADDBUTTON" ONCLICK="Add('Carpenter', 1)">Add</BUTTON>
 				</DIV><BR />
 				<BUTTON CLASS="ACCORDION" STYLE="display: block"> Masons: <SPAN ID="Masons">0</SPAN></BUTTON><DIV CLASS="PANEL">
 					Masons require level 3 tools, consume 1 rock, and produce 0.25 stone per second.
-					<P> Your masons produce <SPAN ID="MasonIncome">0</SPAN> stone per second. </P>
+					<P> Your masons consume <SPAN ID="MasonConsumption">0</SPAN> rock and produce <SPAN ID="MasonIncome">0</SPAN> stone per second. </P>
 					<BUTTON CLASS="ADDBUTTON" ONCLICK="Add('Mason', -1)">Remove</BUTTON>
 					<INPUT ID="NMASON" TYPE="NUMBER" MIN="1" VALUE="1" STEP="1">
 					<BUTTON CLASS="ADDBUTTON" ONCLICK="Add('Mason', 1)">Add</BUTTON>
 				</DIV><BR />
 				<BUTTON ID="DISPBUILDER" CLASS="ACCORDION HIDDEN"> Builders: <SPAN ID="Builders">0</SPAN></BUTTON><DIV CLASS="PANEL">
 					Builders require level 3 tools, consume 1 lumber and 0.25 stone, and produce 0.5 shelter per second.
-					<P> Your builders produce <SPAN ID="BuilderIncome">0</SPAN> shelter per second. </P>
+					<P> Your builders consume <SPAN ID="BuilderLumberConsumption">0</SPAN> lumber and <SPAN ID="BuilderStoneConsumption">0</SPAN> stone, and produce <SPAN ID="BuilderIncome">0</SPAN> shelter per second. </P>
 					<BUTTON CLASS="ADDBUTTON" ONCLICK="Add('Builder', -1)">Remove</BUTTON>
 					<INPUT ID="NBUILD" TYPE="NUMBER" MIN="1" VALUE="1" STEP="1">
 					<BUTTON CLASS="ADDBUTTON" ONCLICK="Add('Builder', 1)">Add</BUTTON>
 				</DIV><BR />
 				<BUTTON ID="DISPSMELTER" CLASS="ACCORDION HIDDEN"> Smelters: <SPAN ID="Smelters">0</SPAN></BUTTON><DIV CLASS="PANEL">
 					Smelters require level 3 tools and furnaces, consume 1 copper ore, and produce 0.25 copper per second.
-					<P> Your smelters produce <SPAN ID="SmelterIncome">0</SPAN> level 3 tools per second. </P>
+					<P> Your smelters consume <SPAN ID="SmelterConsumption">0</SPAN> copper ore and produce <SPAN ID="SmelterIncome">0</SPAN> copper per second. </P>
 					<BUTTON CLASS="ADDBUTTON" ONCLICK="Add('Smelter', -1)">Remove</BUTTON>
 					<INPUT ID="NSMELT" TYPE="NUMBER" MIN="1" VALUE="1" STEP="1">
 					<BUTTON CLASS="ADDBUTTON" ONCLICK="Add('Smelter', 1)">Add</BUTTON>
@@ -117,7 +117,7 @@
 				</DIV><BR />
 				<BUTTON ID="DISPWRIGHT" CLASS="ACCORDION HIDDEN"> Wrights: <SPAN ID="Wrights">0</SPAN></BUTTON><DIV CLASS="PANEL">
 					Wrights require level 3 tools and forges, consume 1 copper and 1 lumber, and produce 0.2 level 4 tools per second.
-					<P> Your wrights produce <SPAN ID="WrightIncome">0</SPAN> level 3 tools per second. </P>
+					<P> Your wrights consume <SPAN ID="WrightCopperConsumption">0</SPAN> copper and <SPAN ID="WrightLumberConsumption">0</SPAN> lumber and produce <SPAN ID="WrightIncome">0</SPAN> level 3 tools per second. </P>
 					<BUTTON CLASS="ADDBUTTON" ONCLICK="Add('Wright', -1)">Remove</BUTTON>
 					<INPUT ID="NWRIGHT" TYPE="NUMBER" MIN="1" VALUE="1" STEP="1">
 					<BUTTON CLASS="ADDBUTTON" ONCLICK="Add('Wright', 1)">Add</BUTTON>
@@ -137,7 +137,7 @@
 				</DIV><BR />
 				<BUTTON CLASS="ACCORDION" STYLE="display: block"> Tanners: <SPAN ID="Tanners">0</SPAN></BUTTON><DIV CLASS="PANEL">
 					Tanners require level 4 tools, consume 5 hide, and produce 1 Leather per second.
-					<P> Your tanners produce <SPAN ID="TannerIncome">0</SPAN> stone per second. </P>
+					<P> Your tanners consume <SPAN ID="TannerConsumption">0</SPAN> hide and produce <SPAN ID="TannerIncome">0</SPAN> leather per second. </P>
 					<BUTTON CLASS="ADDBUTTON" ONCLICK="Add('Tanner', -1)">Remove</BUTTON>
 					<INPUT ID="NTAN" TYPE="NUMBER" MIN="1" VALUE="1" STEP="1">
 					<BUTTON CLASS="ADDBUTTON" ONCLICK="Add('Tanner', 1)">Add</BUTTON>
@@ -158,7 +158,7 @@
 				</DIV><BR />
 				<BUTTON ID="DISPBSMELTER" CLASS="ACCORDION HIDDEN"> Bronze Smelters: <SPAN ID="BSmelters">0</SPAN></BUTTON><DIV CLASS="PANEL">
 					Bronze smelters require level 4 tools and alloy furnaces, consume 9 copper ore and 1 tin, and produce 1 bronze per second.
-					<P> Your bronze smelters produce <SPAN ID="BSmelterIncome">0</SPAN> level 3 tools per second. </P>
+					<P> Your bronze smelters consume <SPAN ID="BSmelterCopperOreConsumption">0</SPAN> copper ore and <SPAN ID="BSmelterTinConsumption">0</SPAN> tin, and produce <SPAN ID="BSmelterIncome">0</SPAN> bronze per second. </P>
 					<BUTTON CLASS="ADDBUTTON" ONCLICK="Add('BSmelter', -1)">Remove</BUTTON>
 					<INPUT ID="NBSMELT" TYPE="NUMBER" MIN="1" VALUE="1" STEP="1">
 					<BUTTON CLASS="ADDBUTTON" ONCLICK="Add('BSmelter', 1)">Add</BUTTON>
@@ -169,7 +169,7 @@
 				</DIV><BR />
 				<BUTTON ID="DISPSMITH" CLASS="ACCORDION HIDDEN"> Smiths: <SPAN ID="Smiths">0</SPAN></BUTTON><DIV CLASS="PANEL">
 					Smiths require level 4 tools and bronze forges, consume 1 bronze, 1 leather, and 1 lumber, and produce 0.2 level 5 tools per second.
-					<P> Your smiths produce <SPAN ID="SmithIncome">0</SPAN> level 3 tools per second. </P>
+					<P> Your smiths consume <SPAN ID="SmithBronzeConsumption">0</SPAN> bronze, <SPAN ID="SmithLeatherConsumption">0</SPAN> leather, and <SPAN ID="SmithLumberConsumption">0</SPAN> lumber, and produce <SPAN ID="SmithIncome">0</SPAN> level 5 tools per second. </P>
 					<BUTTON CLASS="ADDBUTTON" ONCLICK="Add('Smith', -1)">Remove</BUTTON>
 					<INPUT ID="NSMITH" TYPE="NUMBER" MIN="1" VALUE="1" STEP="1">
 					<BUTTON CLASS="ADDBUTTON" ONCLICK="Add('Smith', 1)">Add</BUTTON>
@@ -193,14 +193,14 @@
 		<DIV CLASS="CENTER">
 			<BUTTON CLASS="ACCORDION" STYLE="display: block"> Population: <SPAN ID="Population">10</SPAN> </BUTTON><DIV CLASS="PANEL">
 				Your population requires empty shelter and food to grow.
-				<P>Your population is currently growing at <SPAN ID="PopulationGrowth">0/s</SPAN>,<BR />
+				<P>Your population is currently growing by <SPAN ID="PopulationGrowth">0</SPAN> per second,<BR />
 				limited by <SPAN ID="PopulationLimiter">shelter</SPAN>.</P>
 				<SPAN ID="Unemployed">10</SPAN> citizens are currently unemployed.
 			</DIV><BR />
 			<BUTTON CLASS="ACCORDION" STYLE="display: block"> Food: <SPAN ID="Food">0</SPAN> </BUTTON><DIV CLASS="PANEL">
 				Each citizen consumes 1 food per second.
 				<BR />
-				You are currently producing <SPAN ID="FoodIncome">0</SPAN> food per second.
+				Your food is currently changing by <SPAN ID="FoodIncome">0</SPAN> per second.
 			</DIV><BR />
 			<BUTTON CLASS="ACCORDION" STYLE="display: block"> Shelter: <SPAN ID="Shelter">0</SPAN> </BUTTON><DIV CLASS="PANEL">
 				Each citizen requires 1 shelter.
