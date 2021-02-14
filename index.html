@@ -1,46 +1,29 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <!-- Special meta tag allows you to pass Google Client ID. Replace the content attribute value with your own Client Id -->
-    <meta name="google-signin-client_id" content="YOUR_CLIENT_ID"><!-- // TODO: PUT YOUR GOOGLE CLIENT_ID HERE! -->
-    <!-- Load Google platform SDK-->
-    <script src="https://apis.google.com/js/platform.js" async defer></script>
-    <!-- Load PlayFab Client JavaScript SDK -->
-    <script src="https://download.playfab.com/PlayFabClientApi.js"></script>
-</head>
-<body>
-    <p>Google Access Token Auth Example</p>
-    <!-- Neat Google button gets styled automatically when Google platform SDK is loaded -->
-    <div class="g-signin2" data-onsuccess="onSignIn"></div>
-    <script>
-        // Invoked when user has signed in with Google
-        function onSignIn() {
-            // Retrieve access token
-            var accessToken = gapi.auth2.getAuthInstance().currentUser.get().getAuthResponse(true).access_token;
-
-            // Execute LoginWithGoogleAccount API call using the access token. Please replace TitleID with your own.
-            logLine("Attempting PlayFab Sign-in");
-            PlayFabClientSDK.LoginWithGoogleAccount({
-                AccessToken: accessToken,
-                CreateAccount : true,
-                TitleId: "YOUR_PLAYFAB_TITLE", // TODO: PUT YOUR TITLE ID HERE!
-            }, onPlayFabResponse);
-        }
-
-        // Handles response from playfab.
-        function onPlayFabResponse(response, error) {
-            if (response)
-                logLine("Response: " + JSON.stringify(response));
-            if (error)
-                logLine("Error: " + JSON.stringify(error));
-        }
-
-        function logLine(message) {
-            var textnode = document.createTextNode(message);
-            document.body.appendChild(textnode);
-            var br = document.createElement("br");
-            document.body.appendChild(br);
-        }
-    </script>
-</body>
+    <head>
+        <meta charset="utf-8">
+		<meta name="google-signin-client_id" content="363378022452-3u8hlgllb4cd390edhhip1c69vijnmtc.apps.googleusercontent.com">
+		<script src="https://apis.google.com/js/platform.js" async defer></script>
+		<script src="https://download.playfab.com/PlayFabClientApi.js"></script>
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
+        <meta name="color-scheme" content="light dark">
+        <link rel="stylesheet" href="css/index.css">
+        <title>Hello World</title>
+    </head>
+    <body>
+        <div class="app">
+            <h1>Apache Cordova</h1>
+            <div id="deviceready" class="blink">
+                <p class="event listening">Connecting to Device</p>
+                <p class="event received">Device is Ready</p>
+				<p>Google Access Token Auth Example</p>
+				<div class="g-signin2" data-onsuccess="onSignIn"></div>
+            </div>
+        </div>
+        <script src="cordova.js"></script>
+        <script src="js/index.js"></script>
+    </body>
 </html>
